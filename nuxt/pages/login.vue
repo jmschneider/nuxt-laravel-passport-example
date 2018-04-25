@@ -1,18 +1,21 @@
 <template>
   <section class="container">
-    <form @submit.prevent="localLogin">
-      <div>
-        <label for="username">Username</label>
-        <input name="username" v-model="user.username" />
-      </div>
-      
-      <div>
-        <label for="password">Password</label>
-        <input type="password" name="password" v-model="user.password" />
-      </div>
-      <button type="submit">Login with Password Grant</button>
-    </form>
-    <button @click="clientLogin">Login with OAuth Client</button>
+    <div>
+      <form @submit.prevent="passwordGrantLogin">
+        <div>
+          <label for="username">Username</label>
+          <input name="username" v-model="user.username" />
+        </div>
+        
+        <div>
+          <label for="password">Password</label>
+          <input type="password" name="password" v-model="user.password" />
+        </div>
+        <button type="submit">Login with Password Grant</button>
+      </form>
+    </div>
+    <div><button @click="clientLogin">Login with OAuth Client</button></div>
+    <div><button @click="passportClientCustomLogin">Login with Custom Passport Client Scheme</button></div>
   </section>
 </template>
 
@@ -28,8 +31,8 @@ export default {
     };
   },
   methods: {
-    async localLogin() {
-      await this.$auth.loginWith("local", {
+    async passwordGrantLogin() {
+      await this.$auth.loginWith("password_grant", {
         data: {
           grant_type: "password",
           client_id: process.env.PASSPORT_PASSWORD_GRANT_ID,
@@ -44,6 +47,9 @@ export default {
     },
     clientLogin() {
       this.$auth.loginWith("passport");
+    },
+    passportClientCustomLogin() {
+      this.$auth.loginWith("passport_client_custom");
     }
   }
 };
