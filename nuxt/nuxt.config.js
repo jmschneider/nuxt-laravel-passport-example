@@ -43,14 +43,14 @@ module.exports = {
             propertyName: "access_token"
           },
           logout: false,
-          user: false
+          user: { url: "api/auth/me" }
         }
       },
       passport: {
         _scheme: "oauth2",
         authorization_endpoint:
           process.env.LARAVEL_ENDPOINT + "/oauth/authorize",
-        userinfo_endpoint: false,
+        userinfo_endpoint: process.env.LARAVEL_ENDPOINT + "/api/oauth/me",
         scope: "*",
         response_type: "token",
         token_type: "Bearer",
