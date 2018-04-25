@@ -62,6 +62,8 @@ module.exports = {
       },
       password_grant_custom: {
         _scheme: "~/auth/schemes/PassportPasswordScheme.js",
+        client_id: process.env.PASSPORT_PASSWORD_GRANT_ID,
+        client_secret: process.env.PASSPORT_PASSWORD_GRANT_SECRET,
         endpoints: {
           login: {
             url: "/oauth/token",

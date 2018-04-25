@@ -41,8 +41,8 @@ export default class PassportPasswordScheme {
       ...args,
       data: {
         grant_type: "password",
-        client_id: process.env.PASSPORT_PASSWORD_GRANT_ID,
-        client_secret: process.env.PASSPORT_PASSWORD_GRANT_SECRET,
+        client_id: this.options.client_id,
+        client_secret: this.options.client_secret,
         scope: "*",
         ...args.data
       }
