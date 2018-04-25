@@ -60,6 +60,20 @@ module.exports = {
           }
         }
       },
+      password_grant_custom: {
+        _scheme: "~/auth/schemes/PassportPasswordScheme.js",
+        endpoints: {
+          login: {
+            url: "/oauth/token",
+            method: "post",
+            propertyName: "access_token"
+          },
+          logout: false,
+          user: {
+            url: "api/auth/me"
+          }
+        }
+      },
       passport: {
         _scheme: "oauth2",
         authorization_endpoint:
