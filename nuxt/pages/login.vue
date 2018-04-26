@@ -23,8 +23,7 @@
       </form>
     </div>
     <hr />
-    <div><button @click="clientLogin">Login with OAuth Client</button></div>
-    <div><button @click="passportClientCustomLogin">Login with Custom Passport Client Scheme</button></div>
+    <div><button @click="oauthLogin">Login with OAuth</button></div>
   </section>
 </template>
 
@@ -59,11 +58,8 @@ export default {
       });
       this.$router.replace("/");
     },
-    clientLogin() {
+    oauthLogin() {
       this.$auth.loginWith("passport");
-    },
-    passportClientCustomLogin() {
-      this.$auth.loginWith("passport_client_custom");
     }
   }
 };

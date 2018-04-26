@@ -77,31 +77,10 @@ module.exports = {
         }
       },
       passport: {
-        _scheme: "oauth2",
-        authorization_endpoint:
-          process.env.LARAVEL_ENDPOINT + "/oauth/authorize",
-        userinfo_endpoint: process.env.LARAVEL_ENDPOINT + "/api/oauth/me",
-        scope: "*",
-        response_type: "token",
-        token_type: "Bearer",
-        redirect_uri: undefined,
-        client_id: process.env.PASSPORT_CLIENT_ID,
-        token_key: "access_token"
-      },
-      passport_client_custom: {
-        _scheme: "~/auth/schemes/PassportClientScheme.js",
-        authorization_endpoint:
-          process.env.LARAVEL_ENDPOINT + "/oauth/authorize",
-        userinfo_endpoint: process.env.LARAVEL_ENDPOINT + "/api/oauth/me",
-        scope: "*",
-        response_type: "code",
-        token_type: "Bearer",
-        redirect_uri: undefined,
+        url: process.env.LARAVEL_ENDPOINT,
         client_id: process.env.PASSPORT_CLIENT_ID,
         client_secret: process.env.PASSPORT_CLIENT_SECRET,
-        token_key: "access_token",
-        access_token_endpoint: process.env.LARAVEL_ENDPOINT + "/oauth/token",
-        grant_type: "authorization_code"
+        userinfo_endpoint: process.env.LARAVEL_ENDPOINT + "/api/oauth/me",
       }
     }
   },
