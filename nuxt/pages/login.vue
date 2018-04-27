@@ -59,7 +59,7 @@ export default {
       this.$router.replace("/");
     },
     oauthLogin() {
-      this.$auth.loginWith("passport");
+      this.$auth.loginWith("laravel.passport");
     }
   }
 };

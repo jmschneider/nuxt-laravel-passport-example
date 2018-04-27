@@ -76,7 +76,7 @@ module.exports = {
           }
         }
       },
-      passport: {
+      'laravel.passport': {
         url: process.env.LARAVEL_ENDPOINT,
         client_id: process.env.PASSPORT_CLIENT_ID,
         client_secret: process.env.PASSPORT_CLIENT_SECRET,
