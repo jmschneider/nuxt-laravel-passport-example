@@ -1,5 +1,5 @@
 ---
-title: "Laravel + Nuxt Auth Module = :heart: (Example)"
+title: Laravel + Nuxt Auth Module Example
 ---
 
 # Laravel
