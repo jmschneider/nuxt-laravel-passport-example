@@ -1,3 +1,7 @@
+---
+title: "Laravel + Nuxt Auth Module = :heart: (Example)"
+---
+
 # Laravel
 
 ## Setup
